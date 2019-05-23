@@ -1,19 +1,22 @@
 {
   "name": "lighthouse-audit",
   "version": "1.0.0",
-  "description": "lighthouse audit script",
+  "description": "lighthouse audit generator",
   "main": "index.js",
   "scripts": {
-    "start": "yarn start",
-    "audit": "node audit.js"
+    "start": "yarn generate && yarn serve",
+    "generate": "node src/audit.js",
+    "serve": "npx micro-dev src/serve.js --cold --silent"
   },
-  "keywords": [],
-  "author": "",
+  "author": "mouafa",
   "license": "ISC",
   "dependencies": {
     "filenamify-url": "1.0.0",
     "lighthouse": "4.1.0",
+    "micro": "9.3.4",
+    "micro-dev": "3.0.0",
     "ora": "3.0.0",
+    "serve-handler": "6.0.0",
     "write": "1.0.3"
   }
 }

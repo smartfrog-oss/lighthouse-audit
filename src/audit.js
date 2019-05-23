@@ -1,27 +1,27 @@
-const lighthouse = require('lighthouse');
-const chromeLauncher = require('chrome-launcher');
-const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator');
+const lighthouse = require('lighthouse')
+const chromeLauncher = require('chrome-launcher')
+const ReportGenerator = require('lighthouse/lighthouse-core/report/report-generator')
 const writeFile = require('write')
 const filenamifyUrl = require('filenamify-url')
 const ora = require('ora')
 const path = require('path')
 
 const now = new Date()
-const folderName = now.toISOString().slice(0,-5)
+const folderName = now.toISOString().slice(0, -5)
 
-const {urls}= require('./config.json')
+const { urls } = require('../config.json')
 
 const opts = {
   chromeFlags: [
     // '--show-paint-rects'
-    '--headless'
-  ]
+    '--headless',
+  ],
 }
 
 const config = null
 
 async function main() {
-  const chrome = await chromeLauncher.launch({chromeFlags: opts.chromeFlags})
+  const chrome = await chromeLauncher.launch({ chromeFlags: opts.chromeFlags })
   opts.port = chrome.port
   await auditAll()
   await chrome.kill()
