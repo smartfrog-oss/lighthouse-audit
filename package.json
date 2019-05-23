@@ -1,0 +1,19 @@
+{
+  "name": "lighthouse-audit",
+  "version": "1.0.0",
+  "description": "lighthouse audit script",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn start",
+    "audit": "node audit.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "filenamify-url": "1.0.0",
+    "lighthouse": "4.1.0",
+    "ora": "3.0.0",
+    "write": "1.0.3"
+  }
+}
